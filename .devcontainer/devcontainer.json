@@ -1,0 +1,15 @@
+{
+  "name": "iMX8M Plus Yocto Devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+    "args": {
+        "USER_NAME": "${localEnv:USER}",
+        "USER_UID": "${localEnv:DOCKER_UID}",
+        "USER_GROUPS": "${localEnv:DOCKER_GID}"
+    }
+  },
+  "remoteUser": "${localEnv:USER}",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace"
+}
